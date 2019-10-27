@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+    div.sty{
+      width: 300px;
+      height: 300px;
+      border: 1px solid grey;
+      margin-left: 350px;
+      margin-top: 100px;
+      box-shadow: 0px 12px 15px 0px grey;
+    }
+    input.form-control{
+        margin-top:10px;
+        width: 280px;
+        margin-left: 10px;
+}
+    input[type="button"]{
+margin-right: 20px;
+margin-top: 13px;
+margin-left: 8px;
+    }
+    table,tr{
+    border-collapse:collapse;
+    border:1px solid bl;
+    padding:7px;
+    margin: 20px;
+
+  }
+  tr{
+      padding: 34px;
+  }
+    </style>
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      
+        <link rel="stylesheet" href="css\font awesome\font-awesome-4.7.0\css\font-awesome.css">
+            <link rel="stylesheet" href="css/bootstrap.css">
+           
+          
+            <script type="text/javascript" rel="stylesheet" type="text/css" src="css/jquery.js"></script>
+            <!-- <script rel="stylesheet" type="text/css" src="C:\Users\shoheb khan\Documents\boot\js\bootstrap.min.js"></script> -->
+            <script type="text/javascript" src="css/bootstrap.min.js"></script>
+    <title>calculator</title>
+</head>
+
+<body>
+    <div class="container">
+<div class="sty">
+    <input type="text" class="form-control" name="va" id="input">
+    <br>
+<table>
+    <tr>
+    <input type="button"  class="btn btn-success" value="1" onclick="one(1)">
+    <input type="button" value="2" class="btn btn-success" onclick="one(2)">
+    <input type="button" value="3"  class="btn btn-success" onclick="one(3)">
+    <input type="button" value="+" class="btn btn-primary" onclick="one('+')"> </tr><br><tr>
+    <input type="button" value="4" class="btn btn-success" onclick="one(4)">
+    <input type="button" value="5" class="btn btn-success" onclick="one(5)">
+    <input type="button" value="6" class="btn btn-success" onclick="one(6)"></tr><input type="button" value="_" class="btn btn-primary" onclick="one('-')"><br><tr>
+    <input type="button" value="7"class="btn btn-success" onclick="one(7)">
+    <input type="button" value="8" class="btn btn-success" onclick="one(8)">
+    <input type="button" value="9" class="btn btn-success" onclick="one(9)">
+    <input type="button" value="*" class="btn btn-primary" onclick="one('*')"></tr>
+    <input type="button" value="0" class="btn btn-success" onclick="one(0)">
+    <input type="button" value="=" class="btn btn-danger" onclick="ress(s.value)">
+    <input type="button" value="C" id="clear" class="btn btn-danger" onclick="clear()">
+
+    <input type="button" value="/" class="btn btn-primary" onclick="one('/')">
+    </table>
+</div>
+</div>
+</body>
+<script>
+        $(document).ready(function(){
+    $('#clear').click(function(){
+    $('#input').val("");
+    });
+
+        });
+var s= document.getElementById('input');
+   
+        var pat=/\w?[~`@!#$%^&()><?[a-z]/;
+function check(){
+if(pat.test(s.value)){
+    s.style.Color="red";
+   document.getElementById('input').value="wrong input";
+   s.value
+}
+}
+
+ function   ress(a){
+    // var pat=/\w?[~`@!#$%^&()><?[a-z]/;
+
+    //  if(pat.test(a)){
+    //     document.getElementById('input').value="wrong input";
+    //      }
+    //  s= document.getElementById('input')
+      s.value=eval(a);
+
+    }
+    // wo.addEventListener("click",opent,false);
+s.addEventListener("keyup",check);
+//     function res(a){
+        
+//     var s=document.getElementById('val').value;
+//     var sw=document.getElementById('vall').value;
+ 
+//     if(a=='+'){
+//     var c=s + sw;
+//     }
+//     else if(a=='-') {
+//         var c= s - sw;
+//     }
+//     else if(a=='*'){
+//         var c=s * sw;
+//     }
+//     else{
+//         var c=s / sw;    
+//     }
+//    document.getElementById('answer').innerHTML=c;
+//     }
+function one(a){
+    s=document.getElementById('input');
+    s.value=s.value +""+a;
+    // console.log(s);
+}
+
+// function two(){
+//     s=document.getElementsByTagName('input')[1];
+//     s.value="2";
+//     // console.log(s);
+// }
+
+</script>
+</html>
